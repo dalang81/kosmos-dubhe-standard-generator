@@ -17,7 +17,7 @@ const formatItem = (c, i) => { // category upper snake
         label: item.label || item.itemKey,
         category,
         Upper_Snake_Category,
-        UpperCamelCategory
+        UpperCamelCategory,
     }));
     return {...c, category, items: mergeItems, Upper_Snake_Category, UpperCamelCategory, CATEGORY_SEQ: i};
 };
@@ -42,7 +42,7 @@ class CategoryItem {
     label ?: string;
 }
 
-const yaml2json = ({yamlStr = ''}) => {
+const yaml2json = async ({yamlStr = ''}) => {
     if (!yamlStr || yamlStr.length === 0) {
         throw 'input must be not blank';
     }
@@ -97,28 +97,49 @@ const json2sql = async ({categoryArray, uuid = null, template = read({name: 'sql
     return output;
 };
 
+const json2md = async ({categoryArray, clazz = null, template = read({name: 'md', type: FileType.mustache})}) => {
+    const output = Mustache.render(template, {enums: categoryArray, clazz});
+    console.log('----------------------- json2md start -----------------------\r\n');
+    console.log(output);
+    console.log('\r\n ----------------------- json2md end -----------------------');
+    return output;
+};
+
 const RunException = str => {
     throw str;
 };
 
-const genByYaml = async ({yamlStr = null, yamlResName = null, pkg, clazz}) => {
+const genByYaml = async ({
+                             yamlStr = null,
+                             yamlResName = null,
+                             pkg,
+                             clazz,
+                             output = {java: null, sql: null, json: null, js: null, md: null}
+                         }) => {
     yamlStr = yamlStr || read({
         name: yamlResName,
         type: FileType.yaml
     }) || RunException('yamlStr and yamlResName must be not null ');
-
+    console.log(' genByYaml output ', output);
+    const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
     const uuid = _.replace(u.uuid(), /-/g, '_');
-    const {categoryArray, jsonObject} = yaml2json({yamlStr});
-    write({name: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject)});
+    const {categoryArray, jsonObject} = await yaml2json({yamlStr});
+
+    console.log('----------  categoryArray:  ----------');
+    console.log(JSON.stringify(categoryArray));
+    write({name: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject), output: jsonOutput});
 
     const javaStr = await json2java({categoryArray, pkg, clazz});
-    write({name: clazz, type: FileType.java, uuid, data: javaStr});
+    write({name: clazz, type: FileType.java, uuid, data: javaStr, output: javaOutput});
 
     const sqlStr = await json2sql({categoryArray, uuid});
-    write({name: clazz, type: FileType.sql, uuid, data: sqlStr});
+    write({name: clazz, type: FileType.sql, uuid, data: sqlStr, output: sqlOutput});
 
     const jsStr = await json2js({categoryArray, clazz});
-    write({name: clazz, type: FileType.javascript, uuid, data: jsStr});
+    write({name: clazz, type: FileType.javascript, uuid, data: jsStr, output: jsOutput});
+
+    const mdStr = await json2md({categoryArray, clazz});
+    write({name: clazz, type: FileType.md, uuid, data: mdStr, output: mdOutput});
 };
 
 export {yaml2json, json2yaml, json2java, json2sql, json2js, _flagLast, formatCategory, genByYaml};

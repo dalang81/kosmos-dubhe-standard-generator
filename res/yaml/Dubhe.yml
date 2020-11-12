@@ -21,4 +21,14 @@
       itemKey: 'REPORT'
       itemValue: '50'
       itemSeq: 5
-
+- category: YES_NO
+  categoryName: 是否
+  items:
+    - name: 是
+      itemKey: 'YES'
+      itemValue: '1'
+      itemSeq: 1
+    - name: 否
+      itemKey: 'NO'
+      itemValue: '0'
+      itemSeq: 0

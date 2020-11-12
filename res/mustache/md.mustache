@@ -1,0 +1,18 @@
+|index | category | categoryName|
+|------|----------|-------------|
+{{#enums}}
+    |{{CATEGORY_SEQ}}| {{categoryName}} | {{Upper_Snake_Category}} |
+{{/enums}}
+
+
+{{#enums}}
+
+    {{categoryName}} | {{Upper_Snake_Category}}
+
+| Upper_Snake_Category | categoryName | itemValue | itemKey | name | itemSeq |
+|----------------------|--------------|-----------|---------|------|---------|
+    {{#items}}
+|{{Upper_Snake_Category}}|{{categoryName}}|{{itemValue}}|{{itemKey}}|{{name}}|{{itemSeq}}|
+    {{/items}}
+
+{{/enums}}
