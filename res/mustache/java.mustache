@@ -1,0 +1,71 @@
+package {{pkg}};
+
+import com.kosmos.dubhe.standard.EnumType;
+import static com.kosmos.dubhe.standard.EnumTypeUtils.ENUM_SELF_INTEGER;
+import static com.kosmos.dubhe.standard.EnumTypeUtils.ENUM_SELF_STRING;
+
+public enum {{clazz}} {
+    INSTANCE;
+
+    {{#enums}}
+        public enum {{UpperCamelCategory}} implements EnumType<{{UpperCamelCategory}}> {
+            {{#items}}
+                {{label}}("{{name}}","{{itemKey}}","{{itemValue}}",{{itemSeq}}),  {{#remark}}//{{/remark}} {{remark}}
+            {{/items}}
+            SELF(ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_INTEGER);
+
+            public static final String CATEGORY = "{{Upper_Snake_Category}}";
+            public static final String CATEGORY_NAME = "{{categoryName}}";
+            public static final {{UpperCamelCategory}} DEFAULT = values()[0];
+
+            {{UpperCamelCategory}}(String itemName, String itemKey, String itemValue, Integer itemSeq) {
+                this.itemName = itemName;
+                this.itemKey = itemKey;
+                this.itemValue = itemValue;
+                this.itemSeq = itemSeq;
+            }
+
+            private final String itemName;
+            private final String itemKey;
+            private final String itemValue;
+            private final Integer itemSeq;
+
+            public String getItemName() {
+                return itemName;
+            }
+
+            public String getItemKey() {
+                return itemKey;
+            }
+
+            public String getItemValue() {
+                return itemValue;
+            }
+
+            public Integer getItemSeq() {
+                return itemSeq;
+            }
+
+            public String getString() {
+                return toString().toLowerCase();
+            }
+
+            @Override
+            public  {{UpperCamelCategory}}[] allValues() {
+                return values();
+            }
+
+            @Override
+            public String getCategory() {
+                return CATEGORY;
+            }
+
+            @Override
+            public String getCategoryName() {
+                return CATEGORY_NAME;
+            }
+        }
+
+    {{/enums}}
+}
+

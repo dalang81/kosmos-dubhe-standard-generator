@@ -1,0 +1,30 @@
+{
+  "name": "ll_env_v1_v3",
+  "version": "1.0.0",
+  "dependencies": {
+    "as-table": "^1.0.55",
+    "csv": "^5.3.2",
+    "csv-to-markdown-table": "^1.1.0",
+    "fs-extra": "^8.1.0",
+    "http": "0.0.0",
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.20",
+    "lodash-uuid": "0.0.3",
+    "log4js": "^2.3.7",
+    "moment": "^2.27.0",
+    "ololog": "^1.1.161",
+    "tracer": "^0.8.11"
+  },
+  "description": "env:v1->v3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaka",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.54",
+    "mustache": "^4.0.1",
+    "ts-node": "^8.10.2"
+  }
+}

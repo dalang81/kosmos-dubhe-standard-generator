@@ -1,0 +1,74 @@
+/* eslint-disable  */
+
+{{#enums}}
+class {{UpperCamelCategory}} {
+    static CATEGORY = '{{Upper_Snake_Category}}';
+    static CATEGORY_NAME = '{{categoryName}}';
+
+    constructor(itemName, itemKey, itemValue, itemSeq) {
+        this.itemName = itemName;
+        this.itemKey = itemKey;
+        this.itemValue = itemValue;
+        this.itemSeq = itemSeq;
+    }
+
+    getItemName() {
+        return this.itemName;
+    }
+
+    getItemValue() {
+        return this.itemValue;
+    }
+
+    getItemKey() {
+        return this.itemKey;
+    }
+
+    getItemSeq() {
+        return this.itemSeq;
+    }
+
+    getCategory() {
+        return {{UpperCamelCategory}}.CATEGORY;
+    }
+
+    getCategoryName() {
+        return {{UpperCamelCategory}}.CATEGORY_NAME;
+    }
+}
+{{#items}}
+{{UpperCamelCategory}}.{{label}} = new {{UpperCamelCategory}}('{{name}}', '{{itemKey}}', '{{itemValue}}', {{itemSeq}}); {{#remark}}//{{/remark}} {{remark}}
+{{/items}}
+
+/************************** {{UpperCamelCategory}} define end ***************************/
+
+{{/enums}}
+
+const {{clazz}} = {};
+
+{{#enums}}
+{{UpperCamelCategory}}.$ALL = [
+
+{{#items}}
+{{UpperCamelCategory}}.{{itemKey}},
+{{/items}}
+];
+
+Object.freeze({{UpperCamelCategory}});
+export { {{UpperCamelCategory}} };
+
+/************************** {{UpperCamelCategory}} export end ***************************/
+
+{{/enums}}
+
+{{#enums}}
+{{clazz}}['{{UpperCamelCategory}}'] = {{UpperCamelCategory}}.$ALL;
+{{clazz}}['{{Upper_Snake_Category}}'] = {{UpperCamelCategory}}.$ALL;
+{{/enums}}
+
+export default {{clazz}};
+export function FindEnum(type) {
+    return type.$ALL || {{clazz}}[type];
+}
+
+/* eslint-enable  */

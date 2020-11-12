@@ -1,0 +1,14 @@
+{{#uuid}}
+    CREATE TABLE s_code_item_{{uuid}} AS (   SELECT *   FROM s_code_item   ) ;
+    TRUNCATE table s_code_item;
+{{/uuid}}
+
+    INSERT INTO s_code_item
+        (  `code_type`, `code_type_name`, `code_type_seq`, `code_item`, `code_item_key`, `code_item_name`, `code_item_seq`, `code_effect_start_date`,       `code_effect_end_date`,      `code_desc`)
+    VALUES
+{{#enums}}
+    {{#items}}
+        ( '{{Upper_Snake_Category}}',       '{{categoryName}}',         {{CATEGORY_SEQ}},               '{{itemValue}}',          '{{itemKey}}',           '{{name}}',             {{itemSeq}},              '2018-01-01 00:00:00',             '2999-12-31 00:00:00',                  '{{remark}}') {{^last}},{{/last}}
+    {{/items}}
+{{/enums}}
+;
