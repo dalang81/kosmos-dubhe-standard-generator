@@ -1,1 +1,38 @@
-[{"category":"ACTION_TYPE","categoryName":"操作类型","items":[{"name":"创建","itemKey":"CREATE","itemValue":"10","itemSeq":1},{"name":"编辑","itemKey":"UPDATE","itemValue":"20","itemSeq":2},{"name":"删除","itemKey":"REMOVE","itemValue":"30","itemSeq":3},{"name":"查询","itemKey":"QUERY","itemValue":"40","itemSeq":4},{"name":"上报","itemKey":"REPORT","itemValue":"50","itemSeq":5}]}]
+[
+  {
+    "category": "ACTION_TYPE",
+    "categoryName": "操作类型",
+    "items": [
+      {
+        "name": "创建",
+        "itemKey": "CREATE",
+        "itemValue": "10",
+        "itemSeq": 1
+      },
+      {
+        "name": "编辑",
+        "itemKey": "UPDATE",
+        "itemValue": "20",
+        "itemSeq": 2
+      },
+      {
+        "name": "删除",
+        "itemKey": "REMOVE",
+        "itemValue": "30",
+        "itemSeq": 3
+      },
+      {
+        "name": "查询",
+        "itemKey": "QUERY",
+        "itemValue": "40",
+        "itemSeq": 4
+      },
+      {
+        "name": "上报",
+        "itemKey": "REPORT",
+        "itemValue": "50",
+        "itemSeq": 5
+      }
+    ]
+  }
+]
