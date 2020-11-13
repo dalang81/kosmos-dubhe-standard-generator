@@ -1,4 +1,4 @@
-    CREATE TABLE s_code_item_57b05e7c_c612_422f_823e_ae33898c5963 AS (   SELECT *   FROM s_code_item   ) ;
+    CREATE TABLE s_code_item_d99cb96c_c4c5_4929_8810_d6b0a6cb10a1 AS (   SELECT *   FROM s_code_item   ) ;
     TRUNCATE table s_code_item;
 
     INSERT INTO s_code_item

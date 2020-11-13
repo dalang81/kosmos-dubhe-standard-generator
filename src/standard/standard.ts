@@ -120,7 +120,7 @@ const genByYaml = async ({
         name: yamlResName,
         type: FileType.yaml
     }) || RunException('yamlStr and yamlResName must be not null ');
-    console.log(' genByYaml output ', output);
+    console.log(' genByYaml config ', output);
     const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
     const uuid = _.replace(u.uuid(), /-/g, '_');
     const {categoryArray, jsonObject} = await yaml2json({yamlStr});
