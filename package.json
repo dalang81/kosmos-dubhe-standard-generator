@@ -1,5 +1,5 @@
 {
-  "name": "kosmos-dubhe-standard",
+  "name": "kosmos-dubhe-standard-generator",
   "version": "1.0.0",
   "dependencies": {
     "as-table": "^1.0.55",
