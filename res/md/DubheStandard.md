@@ -5,6 +5,7 @@
     |2| 性别 | GENDER |
     |3| 性别 | GMT_8 |
     |4| 用户角色状态 | USER_ROLE_STATUS |
+    |5| 客户类型 | CUSTOMER_TYPE |
 
 
 
@@ -51,7 +52,17 @@
 |USER_ROLE_STATUS|用户角色状态|0|NORMAL|正常|0|
 |USER_ROLE_STATUS|用户角色状态|10|BAN|禁用|10|
 |USER_ROLE_STATUS|用户角色状态|20|EXPIRED|过期|20|
-|USER_ROLE_STATUS|用户角色状态|999|OTHER|其他|20|
+|USER_ROLE_STATUS|用户角色状态|999|OTHER|其他|999|
+
+
+    5 | 客户类型 | CUSTOMER_TYPE
+
+| Category | categoryName | itemValue | itemKey | name | itemSeq |
+|----------------------|--------------|-----------|---------|------|---------|
+|CUSTOMER_TYPE|客户类型|100|C|铅顾客|100|
+|CUSTOMER_TYPE|客户类型|200|B|铁顾客|200|
+|CUSTOMER_TYPE|客户类型|400|A|黄金顾客|400|
+|CUSTOMER_TYPE|客户类型|800|S|白金顾客|800|
 
 
 

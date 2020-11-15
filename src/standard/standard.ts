@@ -114,11 +114,13 @@ const genByYaml = async ({
                              yamlResName = null,
                              pkg,
                              clazz,
-                             output = {java: null, sql: null, json: null, js: null, md: null}
+                             output = {java: null, sql: null, json: null, js: null, md: null},
+                             input = null
                          }) => {
     yamlStr = yamlStr || read({
         name: yamlResName,
-        type: FileType.yaml
+        type: FileType.yaml,
+        input
     }) || RunException('yamlStr and yamlResName must be not null ');
     console.log(' genByYaml config ', output);
     const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
