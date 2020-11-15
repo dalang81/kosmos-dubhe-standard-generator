@@ -1,9 +1,9 @@
 {
   "yamlResName": "Dubhe",
-  "pkg": "com.kosmos.dubhe",
+  "pkg": "com.kosmos.dubhe.standard",
   "clazz": "DubheStandard",
   "output": {
     "java": "D:\\dev\\kosmos\\dubhe2\\standard\\src\\main\\java\\com\\kosmos\\dubhe\\standard",
-    "js": "D:\\dev\\kosmos\\dubhe\\kosmos-dubhe-standard-js"
+    "js": "D:\\dev\\kosmos\\manage-web\\src\\standard"
   }
 }
