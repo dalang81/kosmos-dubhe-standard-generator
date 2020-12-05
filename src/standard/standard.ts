@@ -168,7 +168,21 @@ const genByYamlArray = async configGroup => {
             return result;
         }
     ));
-    console.log(' genByYamlArray jsonGroup ', jsonGroup);
+   // console.log(' genByYamlArray jsonGroup ', JSON.stringify(jsonGroup));
+
+    const duplicated = _.chain(jsonGroup)
+        .map('categoryArray')
+        .flatMap()
+        .groupBy('category')
+        .map((v, k) => v.length > 1 ? {category: k} : null)
+        .compact()
+        .value();
+    console.log(' genByYamlArray allCategory ', JSON.stringify(duplicated));
+    if (duplicated.length > 0) {
+        console.error(' genByYamlArray duplicated ', duplicated.length, _.map(duplicated, 'category').join(","));
+        console.table(duplicated);
+        process.exit(-1);
+    }
 
     return await Promise.all(_.map(jsonGroup, async ({categoryArray, jsonObject, pkg, clazz, output,}) => await genByJSON({
         categoryArray,
