@@ -1,3 +1,3 @@
-import {genByYaml} from './standard';
+import {genByYamlArray} from './standard';
 
-genByYaml(require(`../../config.system.json`)).then();
+genByYamlArray(require(`../../config.system.json`)).then();

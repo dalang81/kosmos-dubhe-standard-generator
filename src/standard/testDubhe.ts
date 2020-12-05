@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as u from 'lodash-uuid';
-import {genByYaml, json2java, json2sql, json2js, yaml2json, formatCategory} from './standard';
+import {genByYamlArray, json2java, json2sql, json2js, yaml2json, formatCategory} from './standard';
 import {FileType, read, write} from './fileUtils';
 
 const yamlStr = `
@@ -126,11 +126,11 @@ const testGenByYaml = () => {
          uuid: _.replace(u.uuid(), /-/g, '_')
      });
      write('DubheEnum', FileType.sql, sqlStr);*/
-    genByYaml({
+    genByYamlArray([{
         yamlResName: 'Dubhe',
         pkg: 'com.kosmos',
         clazz: 'Dubhe'
-    }).then();
+    }]).then();
 
 };
 testGenByYaml();

@@ -22,8 +22,8 @@ const formatItem = (c, i) => { // category upper snake
     return {...c, category, items: mergeItems, Upper_Snake_Category, UpperCamelCategory, CATEGORY_SEQ: i};
 };
 const formatCategory = categoryArray => {
-    const josn = JSON.parse(JSON.stringify(categoryArray));
-    const result = _.map(_flagLast(josn, 'categoryLast'), (item, i) => formatItem(item, i));
+    const json = JSON.parse(JSON.stringify(categoryArray));
+    const result = _.map(_flagLast(json, 'categoryLast'), (item, i) => formatItem(item, i));
     _.each(result, r => _.each(r.items, rr => (rr.last = (r.categoryLast && rr.itemLast))));
     return result;
 };
@@ -109,26 +109,92 @@ const RunException = str => {
     throw str;
 };
 
-const genByYaml = async ({
-                             yamlStr = null,
-                             yamlResName = null,
-                             pkg,
-                             clazz,
-                             output = {java: null, sql: null, json: null, js: null, md: null},
-                             input = null
-                         }) => {
+// const genByYaml = async ({
+//                              yamlStr = null,
+//                              yamlResName = null,
+//                              pkg,
+//                              clazz,
+//                              output = {java: null, sql: null, json: null, js: null, md: null},
+//                              input = null,
+//
+//                          }) => {
+//     yamlStr = yamlStr || read({
+//         name: yamlResName,
+//         type: FileType.yaml,
+//         input
+//     }) || RunException('yamlStr and yamlResName must be not null ');
+//     console.log(' genByYaml config ', output);
+//     const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
+//     const uuid = _.replace(u.uuid(), /-/g, '_');
+//     const {categoryArray, jsonObject} = await yaml2json({yamlStr});
+//
+//     console.log('----------  categoryArray:  ----------');
+//     console.log(JSON.stringify(categoryArray));
+//     await genByJSON({categoryArray, jsonObject, uuid, pkg, clazz, output});
+// };
+
+const genJson = async ({
+                           yamlStr = null,
+                           yamlResName = null,
+                           input = null,
+
+                       }) => {
     yamlStr = yamlStr || read({
         name: yamlResName,
         type: FileType.yaml,
         input
     }) || RunException('yamlStr and yamlResName must be not null ');
-    console.log(' genByYaml config ', output);
-    const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
-    const uuid = _.replace(u.uuid(), /-/g, '_');
     const {categoryArray, jsonObject} = await yaml2json({yamlStr});
+    return {categoryArray, jsonObject};
+};
 
-    console.log('----------  categoryArray:  ----------');
-    console.log(JSON.stringify(categoryArray));
+const genByYamlArray = async configGroup => {
+    console.log(' genByYamlArray config ', configGroup);
+
+    const jsonGroup = await Promise.all(_.map(configGroup, async ({yamlStr, input, yamlResName, pkg, clazz, output,}) => {
+            const g = await genJson({
+                yamlStr,
+                input,
+                yamlResName,
+            });
+            console.log('   g ', g);
+            const result = {
+                pkg,
+                clazz,
+                output,
+                ...g,
+            };
+            console.log('  result ', result);
+            return result;
+        }
+    ));
+    console.log(' genByYamlArray jsonGroup ', jsonGroup);
+
+    return await Promise.all(_.map(jsonGroup, async ({categoryArray, jsonObject, pkg, clazz, output,}) => await genByJSON({
+        categoryArray,
+        jsonObject,
+        pkg,
+        clazz,
+        output,
+    })));
+};
+
+const genByJSON = async ({
+                             categoryArray,
+                             jsonObject,
+                             pkg,
+                             clazz,
+                             output = {java: null, sql: null, json: null, js: null, md: null},
+                         }) => {
+    console.log(' genByJSON  categoryArray,                             jsonObject,                             pkg,                             clazz,                             output '
+        , categoryArray,
+        jsonObject,
+        pkg,
+        clazz,
+        output);
+    const uuid = _.replace(u.uuid(), /-/g, '_');
+    const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
+
     write({name: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject), output: jsonOutput});
 
     const javaStr = await json2java({categoryArray, pkg, clazz});
@@ -144,4 +210,4 @@ const genByYaml = async ({
     write({name: clazz, type: FileType.md, uuid, data: mdStr, output: mdOutput});
 };
 
-export {yaml2json, json2yaml, json2java, json2sql, json2js, _flagLast, formatCategory, genByYaml};
+export {yaml2json, json2yaml, json2java, json2sql, json2js, _flagLast, formatCategory, genByYamlArray};

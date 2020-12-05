@@ -1,0 +1,1430 @@
+[
+  {
+    "category": "ACTION_TYPE",
+    "categoryName": "操作类型",
+    "items": [
+      {
+        "name": "创建",
+        "itemKey": "CREATE",
+        "itemValue": "10",
+        "itemSeq": 10
+      },
+      {
+        "name": "编辑",
+        "itemKey": "UPDATE",
+        "itemValue": "20",
+        "itemSeq": 20
+      },
+      {
+        "name": "删除",
+        "itemKey": "REMOVE",
+        "itemValue": "30",
+        "itemSeq": 30
+      },
+      {
+        "name": "查询",
+        "itemKey": "QUERY",
+        "itemValue": "40",
+        "itemSeq": 40
+      },
+      {
+        "name": "打印",
+        "itemKey": "PRINT",
+        "itemValue": "50",
+        "itemSeq": 50
+      },
+      {
+        "name": "导出",
+        "itemKey": "EXPORT",
+        "itemValue": "60",
+        "itemSeq": 60
+      },
+      {
+        "name": "审核",
+        "itemKey": "AUDIT",
+        "itemValue": "70",
+        "itemSeq": 70
+      }
+    ]
+  },
+  {
+    "category": "YES_NO",
+    "categoryName": "是否",
+    "items": [
+      {
+        "name": "是",
+        "itemKey": "YES",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "否",
+        "itemKey": "NO",
+        "itemValue": "0",
+        "itemSeq": 0
+      }
+    ]
+  },
+  {
+    "category": "GENDER",
+    "categoryName": "性别",
+    "items": [
+      {
+        "name": "男性",
+        "itemKey": "MALE",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "女性",
+        "itemKey": "FEMALE",
+        "itemValue": "2",
+        "itemSeq": 2
+      }
+    ]
+  },
+  {
+    "category": "Gmt8",
+    "categoryName": "时区",
+    "items": [
+      {
+        "name": "GMT_8",
+        "itemKey": "GMT_8",
+        "itemValue": "10",
+        "itemSeq": 10
+      }
+    ]
+  },
+  {
+    "category": "AntiHbcIgm",
+    "categoryName": "抗-HBc IgM1:1000检测结果",
+    "items": [
+      {
+        "name": "阳性",
+        "itemKey": "YANG",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "阴性",
+        "itemKey": "YIN",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "未测",
+        "itemKey": "WC",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "AgeUnitCode",
+    "categoryName": "年龄单位",
+    "items": [
+      {
+        "name": "岁",
+        "itemKey": "YEAR",
+        "itemValue": "01",
+        "itemSeq": 1
+      },
+      {
+        "name": "月",
+        "itemKey": "MONTH",
+        "itemValue": "02",
+        "itemSeq": 2
+      },
+      {
+        "name": "天",
+        "itemKey": "DATE",
+        "itemValue": "03",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "UserRoleStatus",
+    "categoryName": "用户角色状态",
+    "items": [
+      {
+        "name": "正常",
+        "itemKey": "NORMAL",
+        "itemValue": "0",
+        "itemSeq": 0
+      },
+      {
+        "name": "禁用",
+        "itemKey": "BAN",
+        "itemValue": "10",
+        "itemSeq": 10
+      },
+      {
+        "name": "过期",
+        "itemKey": "EXPIRED",
+        "itemValue": "20",
+        "itemSeq": 20
+      },
+      {
+        "name": "其他",
+        "itemKey": "OTHER",
+        "itemValue": "999",
+        "itemSeq": 20
+      }
+    ]
+  },
+  {
+    "category": "DIAGNOSIS_STATE",
+    "categoryName": "病例诊断结果分类",
+    "items": [
+      {
+        "name": "临床诊断病例",
+        "itemKey": "LCZDBL",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "确诊病例",
+        "itemKey": "QZBL",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "疑似病例",
+        "itemKey": "YSBL",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "病原携带者",
+        "itemKey": "BYXDZ",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "阳性检测",
+        "itemKey": "YXJC",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "埃博拉留观病例",
+        "itemKey": "ABLLGBL",
+        "itemValue": "6",
+        "itemSeq": 6
+      }
+    ]
+  },
+  {
+    "category": "EDUCATION_LEVEL",
+    "categoryName": "教育程度",
+    "items": [
+      {
+        "name": "文盲",
+        "itemKey": "WM",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "小学",
+        "itemKey": "XX",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "初中",
+        "itemKey": "CZ",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "高中或中专",
+        "itemKey": "GZ",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "大专及以上",
+        "itemKey": "DZ",
+        "itemValue": "5",
+        "itemSeq": 5
+      }
+    ]
+  },
+  {
+    "category": "HBSAG_CHANGE",
+    "categoryName": "肝穿检测结果",
+    "items": [
+      {
+        "name": "是",
+        "itemKey": "YES",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "否",
+        "itemKey": "NO",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "未测",
+        "itemKey": "UNTESTED",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "IDCARD_TYPE",
+    "categoryName": "证件类型",
+    "items": [
+      {
+        "name": "身份证",
+        "itemKey": "SFZ",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "护照",
+        "itemKey": "HZ",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "军官证",
+        "itemKey": "JGZ",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "港澳通行证",
+        "itemKey": "GATXZ",
+        "itemValue": "6",
+        "itemSeq": 6
+      },
+      {
+        "name": "台湾通行证",
+        "itemKey": "TWTXZ",
+        "itemValue": "7",
+        "itemSeq": 7
+      },
+      {
+        "name": "其他法定有效证件",
+        "itemKey": "OTHER",
+        "itemValue": "99",
+        "itemSeq": 99
+      }
+    ]
+  },
+  {
+    "category": "LABORATORY_CONCLUSION",
+    "categoryName": "实验室检测结论",
+    "items": [
+      {
+        "name": "确认结果阳性",
+        "itemKey": "QRJG",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "替代策略检测阳性",
+        "itemKey": "TDCL",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "核酸检测阳性",
+        "itemKey": "HSJY",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "HBSAG_LIVER",
+    "categoryName": "肝穿检测结果",
+    "items": [
+      {
+        "name": "急性病变",
+        "itemKey": "JX",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "慢性病变",
+        "itemKey": "MX",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "未测",
+        "itemKey": "UNTESTED",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "MARITAL_STATUS",
+    "categoryName": "婚姻状况",
+    "items": [
+      {
+        "name": "未婚",
+        "itemKey": "WH",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "已婚或有配偶",
+        "itemKey": "YH",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "离异或丧偶",
+        "itemKey": "LY",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "不详",
+        "itemKey": "BX",
+        "itemValue": "4",
+        "itemSeq": 4
+      }
+    ]
+  },
+  {
+    "category": "HAS_OR_NO",
+    "categoryName": "有无",
+    "items": [
+      {
+        "name": "有",
+        "itemKey": "HAS",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "无",
+        "itemKey": "NONE",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "不详",
+        "itemKey": "BX",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "FOUND_METHOD",
+    "categoryName": "样本来源",
+    "items": [
+      {
+        "name": "术前检测",
+        "itemKey": "SQJC",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "受血(制品)前检测",
+        "itemKey": "SXQJC",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "性病门诊",
+        "itemKey": "XBMZ",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "其他就诊者检测",
+        "itemKey": "QTJZZJC",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "婚前检查(含涉外婚姻)",
+        "itemKey": "HQJC",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "孕产期检查",
+        "itemKey": "YCQJC",
+        "itemValue": "6",
+        "itemSeq": 6
+      },
+      {
+        "name": "检测咨询",
+        "itemKey": "JCZX",
+        "itemValue": "7",
+        "itemSeq": 7
+      },
+      {
+        "name": "阳性者配偶或性伴检测",
+        "itemKey": "YXZPO",
+        "itemValue": "8",
+        "itemSeq": 8
+      },
+      {
+        "name": "女性阳性者子女检测",
+        "itemKey": "NXYXZZN",
+        "itemValue": "9",
+        "itemSeq": 9
+      },
+      {
+        "name": "职业暴露检测",
+        "itemKey": "ZYBL",
+        "itemValue": "10",
+        "itemSeq": 10
+      },
+      {
+        "name": "娱乐场所人员体检",
+        "itemKey": "YLCS",
+        "itemValue": "11",
+        "itemSeq": 11
+      },
+      {
+        "name": "有偿供血(浆)人员检测",
+        "itemKey": "YCGX",
+        "itemValue": "12",
+        "itemSeq": 12
+      },
+      {
+        "name": "无偿献血人员检测",
+        "itemKey": "WCXX",
+        "itemValue": "13",
+        "itemSeq": 13
+      },
+      {
+        "name": "出入境人员体检",
+        "itemKey": "CRJRY",
+        "itemValue": "14",
+        "itemSeq": 14
+      },
+      {
+        "name": "新兵体检",
+        "itemKey": "XBTJ",
+        "itemValue": "15",
+        "itemSeq": 15
+      },
+      {
+        "name": "强制/劳教戒毒人员检测",
+        "itemKey": "QZJD",
+        "itemValue": "16",
+        "itemSeq": 16
+      },
+      {
+        "name": "妇教所/女劳收教人员检测",
+        "itemKey": "FJS",
+        "itemValue": "17",
+        "itemSeq": 17
+      },
+      {
+        "name": "其他羁押人员体检",
+        "itemKey": "QTJY",
+        "itemValue": "18",
+        "itemSeq": 18
+      },
+      {
+        "name": "专题调查",
+        "itemKey": "ZTDC",
+        "itemValue": "19",
+        "itemSeq": 19
+      },
+      {
+        "name": "其他",
+        "itemKey": "OTHER",
+        "itemValue": "20",
+        "itemSeq": 20
+      }
+    ]
+  },
+  {
+    "category": "BLOOD_SPREAD",
+    "categoryName": "感染途径",
+    "items": [
+      {
+        "name": "注射毒品",
+        "itemKey": "ZSDP",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "异性传播",
+        "itemKey": "YXCB",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "同性传播",
+        "itemKey": "TXCB",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "性接触 + 注射毒品",
+        "itemKey": "XJC",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "采血(浆)",
+        "itemKey": "CX",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "输血/血制品",
+        "itemKey": "SX",
+        "itemValue": "6",
+        "itemSeq": 6
+      },
+      {
+        "name": "母婴传播",
+        "itemKey": "MYCB",
+        "itemValue": "7",
+        "itemSeq": 7
+      },
+      {
+        "name": "职业暴露",
+        "itemKey": "ZYBL",
+        "itemValue": "8",
+        "itemSeq": 8
+      },
+      {
+        "name": "不详",
+        "itemKey": "BX",
+        "itemValue": "9",
+        "itemSeq": 9
+      },
+      {
+        "name": "其他",
+        "itemKey": "OTHER",
+        "itemValue": "10",
+        "itemSeq": 10
+      }
+    ]
+  },
+  {
+    "category": "HBSAG_POSTIVE",
+    "categoryName": "HBsAg阳性时间",
+    "items": [
+      {
+        "name": ">6个月",
+        "itemKey": "GT6MONTH",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "6个月内由阴性转为阳性",
+        "itemKey": "LT6MONTH",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "既往未检测或结果不详",
+        "itemKey": "BX",
+        "itemValue": "3",
+        "itemSeq": 3
+      }
+    ]
+  },
+  {
+    "category": "CONTACT_SPREAD",
+    "categoryName": "性病接触史",
+    "items": [
+      {
+        "name": "注射毒品史",
+        "itemKey": "ZSDP",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "非婚异性性接触史",
+        "itemKey": "FHYX",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "配偶/固定性伴阳性",
+        "itemKey": "PEXB",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "男男性行为史",
+        "itemKey": "NNXXW",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "献血（浆）史",
+        "itemKey": "XX",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "输血/血制品史",
+        "itemKey": "SX",
+        "itemValue": "6",
+        "itemSeq": 6
+      },
+      {
+        "name": "母亲阳性",
+        "itemKey": "MQYX",
+        "itemValue": "7",
+        "itemSeq": 7
+      },
+      {
+        "name": "职业暴露史",
+        "itemKey": "ZYBL",
+        "itemValue": "8",
+        "itemSeq": 8
+      },
+      {
+        "name": "手术史",
+        "itemKey": "SSS",
+        "itemValue": "9",
+        "itemSeq": 9
+      },
+      {
+        "name": "不详",
+        "itemKey": "BX",
+        "itemValue": "10",
+        "itemSeq": 10
+      },
+      {
+        "name": "其他",
+        "itemKey": "OTHER",
+        "itemValue": "11",
+        "itemSeq": 11
+      }
+    ]
+  },
+  {
+    "category": "CASE_CATEGORY",
+    "categoryName": "病例类型",
+    "items": [
+      {
+        "name": "未分型",
+        "itemKey": "WFX",
+        "itemValue": "0",
+        "itemSeq": 0
+      },
+      {
+        "name": "急性",
+        "itemKey": "JX",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "慢性",
+        "itemKey": "MX",
+        "itemValue": "2",
+        "itemSeq": 2
+      }
+    ]
+  },
+  {
+    "category": "REGION_TYPE",
+    "categoryName": "所属区域",
+    "items": [
+      {
+        "name": "本县区",
+        "itemKey": "BXQ",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "本市其他县区",
+        "itemKey": "BSQTXQ",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "本省其它地市",
+        "itemKey": "BSQTDS",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "其他省",
+        "itemKey": "QTS",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "港澳台",
+        "itemKey": "GAT",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "外籍",
+        "itemKey": "WJ",
+        "itemValue": "6",
+        "itemSeq": 6
+      }
+    ]
+  },
+  {
+    "category": "PEOPLE_CATEGORY",
+    "categoryName": "人群分类",
+    "items": [
+      {
+        "name": "幼托儿童",
+        "itemKey": "YTET",
+        "itemValue": "1",
+        "itemSeq": 1
+      },
+      {
+        "name": "散居儿童",
+        "itemKey": "SJET",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "学生",
+        "itemKey": "XS",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "教师",
+        "itemKey": "JS",
+        "itemValue": "4",
+        "itemSeq": 4
+      },
+      {
+        "name": "保育员及保姆",
+        "itemKey": "BYY",
+        "itemValue": "5",
+        "itemSeq": 5
+      },
+      {
+        "name": "餐饮食品业",
+        "itemKey": "CYSPY",
+        "itemValue": "6",
+        "itemSeq": 6
+      },
+      {
+        "name": "公共场所服务员",
+        "itemKey": "GGCSFYW",
+        "itemValue": "7",
+        "itemSeq": 7
+      },
+      {
+        "name": "商业服务",
+        "itemKey": "SYFW",
+        "itemValue": "8",
+        "itemSeq": 8
+      },
+      {
+        "name": "医务人员",
+        "itemKey": "YWRY",
+        "itemValue": "9",
+        "itemSeq": 9
+      },
+      {
+        "name": "工人",
+        "itemKey": "GR",
+        "itemValue": "16",
+        "itemSeq": 16
+      },
+      {
+        "name": "民工",
+        "itemKey": "MG",
+        "itemValue": "17",
+        "itemSeq": 17
+      },
+      {
+        "name": "农民",
+        "itemKey": "NM",
+        "itemValue": "18",
+        "itemSeq": 18
+      },
+      {
+        "name": "牧民",
+        "itemKey": "MM",
+        "itemValue": "19",
+        "itemSeq": 19
+      },
+      {
+        "name": "渔(船)民",
+        "itemKey": "YM",
+        "itemValue": "20",
+        "itemSeq": 20
+      },
+      {
+        "name": "海员及长途驾驶员",
+        "itemKey": "HYJCTJSY",
+        "itemValue": "21",
+        "itemSeq": 21
+      },
+      {
+        "name": "干部职员",
+        "itemKey": "GBZY",
+        "itemValue": "22",
+        "itemSeq": 22
+      },
+      {
+        "name": "离退人员",
+        "itemKey": "LTRY",
+        "itemValue": "23",
+        "itemSeq": 23
+      },
+      {
+        "name": "家务及待业",
+        "itemKey": "JWJDY",
+        "itemValue": "24",
+        "itemSeq": 24
+      },
+      {
+        "name": "不详",
+        "itemKey": "BX",
+        "itemValue": "28",
+        "itemSeq": 28
+      },
+      {
+        "name": "其他",
+        "itemKey": "OTHER",
+        "itemValue": "29",
+        "itemSeq": 29
+      }
+    ]
+  },
+  {
+    "category": "DISEASES_TYPE",
+    "categoryName": "传染病",
+    "items": [
+      {
+        "name": "鼠疫",
+        "itemKey": "Plague",
+        "itemValue": "2",
+        "itemSeq": 2
+      },
+      {
+        "name": "霍乱",
+        "itemKey": "Cholera",
+        "itemValue": "3",
+        "itemSeq": 3
+      },
+      {
+        "name": "细菌性痢疾",
+        "itemKey": "BacillaryDysentery",
+        "itemValue": "11",
+        "itemSeq": 11
+      },
+      {
+        "name": "阿米巴性痢疾",
+        "itemKey": "AmebicDysentery",
+        "itemValue": "12",
+        "itemSeq": 12
+      },
+      {
+        "name": "伤寒",
+        "itemKey": "TyphoidFever",
+        "itemValue": "13",
+        "itemSeq": 13
+      },
+      {
+        "name": "艾滋病",
+        "itemKey": "AIDS",
+        "itemValue": "14",
+        "itemSeq": 14
+      },
+      {
+        "name": "HIV",
+        "itemKey": "HIV",
+        "itemValue": "15",
+        "itemSeq": 15
+      },
+      {
+        "name": "淋病",
+        "itemKey": "Gonorrhea",
+        "itemValue": "16",
+        "itemSeq": 16
+      },
+      {
+        "name": "Ⅰ期梅毒",
+        "itemKey": "SyphilisI",
+        "itemValue": "18",
+        "itemSeq": 18
+      },
+      {
+        "name": "Ⅱ期梅毒",
+        "itemKey": "SyphilisII",
+        "itemValue": "19",
+        "itemSeq": 19
+      },
+      {
+        "name": "脊灰",
+        "itemKey": "Poliomyelitis",
+        "itemValue": "21",
+        "itemSeq": 21
+      },
+      {
+        "name": "麻疹",
+        "itemKey": "measles",
+        "itemValue": "22",
+        "itemSeq": 22
+      },
+      {
+        "name": "百日咳",
+        "itemKey": "Pertussis",
+        "itemValue": "23",
+        "itemSeq": 23
+      },
+      {
+        "name": "白喉",
+        "itemKey": "Diphtheria",
+        "itemValue": "24",
+        "itemSeq": 24
+      },
+      {
+        "name": "流脑",
+        "itemKey": "epidemicCerebrospinalMeningitis",
+        "itemValue": "25",
+        "itemSeq": 25
+      },
+      {
+        "name": "猩红热",
+        "itemKey": "ScarletFever",
+        "itemValue": "26",
+        "itemSeq": 26
+      },
+      {
+        "name": "出血热",
+        "itemKey": "epidemicHemorrhagicFeverEhf",
+        "itemValue": "27",
+        "itemSeq": 27
+      },
+      {
+        "name": "狂犬病",
+        "itemKey": "Rabies",
+        "itemValue": "28",
+        "itemSeq": 28
+      },
+      {
+        "name": "钩体病",
+        "itemKey": "Leptospirosis",
+        "itemValue": "29",
+        "itemSeq": 29
+      },
+      {
+        "name": "布病",
+        "itemKey": "Brucellosis",
+        "itemValue": "30",
+        "itemSeq": 30
+      },
+      {
+        "name": "新生儿破伤风",
+        "itemKey": "NeonatalTetanus",
+        "itemValue": "40",
+        "itemSeq": 40
+      },
+      {
+        "name": "传染性非典",
+        "itemKey": "SARS",
+        "itemValue": "45",
+        "itemSeq": 45
+      },
+      {
+        "name": "斑疹伤寒",
+        "itemKey": "EpidemicEndemicTyphus",
+        "itemValue": "120",
+        "itemSeq": 120
+      },
+      {
+        "name": "乙脑",
+        "itemKey": "EpidemicEncephalitisB",
+        "itemValue": "121",
+        "itemSeq": 121
+      },
+      {
+        "name": "黑热病",
+        "itemKey": "KalaAzar",
+        "itemValue": "122",
+        "itemSeq": 122
+      },
+      {
+        "name": "间日疟",
+        "itemKey": "tertianAgue",
+        "itemValue": "124",
+        "itemSeq": 124
+      },
+      {
+        "name": "恶性疟",
+        "itemKey": "MalignantMalaria",
+        "itemValue": "125",
+        "itemSeq": 125
+      },
+      {
+        "name": "疟疾（未分型）",
+        "itemKey": "OtherMalaria",
+        "itemValue": "126",
+        "itemSeq": 126
+      },
+      {
+        "name": "登革热",
+        "itemKey": "DengueFever",
+        "itemValue": "127",
+        "itemSeq": 127
+      },
+      {
+        "name": "涂（+）",
+        "itemKey": "Tu",
+        "itemValue": "130",
+        "itemSeq": 130
+      },
+      {
+        "name": "菌（-）",
+        "itemKey": "Jun",
+        "itemValue": "131",
+        "itemSeq": 131
+      },
+      {
+        "name": "未痰检",
+        "itemKey": "Wei",
+        "itemValue": "132",
+        "itemSeq": 132
+      },
+      {
+        "name": "非典（疑似）",
+        "itemKey": "SARS_SUSPECTED",
+        "itemValue": "133",
+        "itemSeq": 133
+      },
+      {
+        "name": "仅培阳",
+        "itemKey": "Jin",
+        "itemValue": "134",
+        "itemSeq": 134
+      },
+      {
+        "name": "血吸虫病",
+        "itemKey": "Schistosomiasis",
+        "itemValue": "135",
+        "itemSeq": 135
+      },
+      {
+        "name": "丝虫病",
+        "itemKey": "Filariasis",
+        "itemValue": "136",
+        "itemSeq": 136
+      },
+      {
+        "name": "包虫病",
+        "itemKey": "Echinococcosis",
+        "itemValue": "137",
+        "itemSeq": 137
+      },
+      {
+        "name": "麻风病",
+        "itemKey": "Lepriasis",
+        "itemValue": "138",
+        "itemSeq": 138
+      },
+      {
+        "name": "流行性感冒",
+        "itemKey": "Grippe",
+        "itemValue": "139",
+        "itemSeq": 139
+      },
+      {
+        "name": "流行性腮腺炎",
+        "itemKey": "Mumps",
+        "itemValue": "140",
+        "itemSeq": 140
+      },
+      {
+        "name": "风疹",
+        "itemKey": "Rubella",
+        "itemValue": "141",
+        "itemSeq": 141
+      },
+      {
+        "name": "急性出血性结膜炎",
+        "itemKey": "AcuteHemorrhagicConjunctivitis",
+        "itemValue": "142",
+        "itemSeq": 142
+      },
+      {
+        "name": "其它感染性腹泻病",
+        "itemKey": "InfectiousDiarrhea",
+        "itemValue": "143",
+        "itemSeq": 143
+      },
+      {
+        "name": "非淋菌性尿道炎",
+        "itemKey": "NGU",
+        "itemValue": "144",
+        "itemSeq": 144
+      },
+      {
+        "name": "尖锐湿疣",
+        "itemKey": "Condylomayloma",
+        "itemValue": "145",
+        "itemSeq": 145
+      },
+      {
+        "name": "其它疾病",
+        "itemKey": "OtherDisease",
+        "itemValue": "146",
+        "itemSeq": 146
+      },
+      {
+        "name": "生殖器疱疹",
+        "itemKey": "HSV",
+        "itemValue": "147",
+        "itemSeq": 147
+      },
+      {
+        "name": "不明原因肺炎",
+        "itemKey": "UnknownCausePneumonia",
+        "itemValue": "160",
+        "itemSeq": 160
+      },
+      {
+        "name": "结核性胸膜炎",
+        "itemKey": "Jie",
+        "itemValue": "197",
+        "itemSeq": 197
+      },
+      {
+        "name": "手足口病",
+        "itemKey": "HFMD",
+        "itemValue": "198",
+        "itemSeq": 198
+      },
+      {
+        "name": "不明原因",
+        "itemKey": "UnknownCause",
+        "itemValue": "199",
+        "itemSeq": 199
+      },
+      {
+        "name": "III期梅毒",
+        "itemKey": "SyphilisIII",
+        "itemValue": "200",
+        "itemSeq": 200
+      },
+      {
+        "name": "胎传梅毒",
+        "itemKey": "SyphilisFetal",
+        "itemValue": "201",
+        "itemSeq": 201
+      },
+      {
+        "name": "人感染高致病性禽流感",
+        "itemKey": "AvianInfluenzaVirus",
+        "itemValue": "202",
+        "itemSeq": 202
+      },
+      {
+        "name": "肺炭疽",
+        "itemKey": "LungAnthrax",
+        "itemValue": "203",
+        "itemSeq": 203
+      },
+      {
+        "name": "皮肤炭疽",
+        "itemKey": "DermaAnthrax",
+        "itemValue": "204",
+        "itemSeq": 204
+      },
+      {
+        "name": "炭疽（未分型）",
+        "itemKey": "OtherAnthrax",
+        "itemValue": "205",
+        "itemSeq": 205
+      },
+      {
+        "name": "其它",
+        "itemKey": "Other",
+        "itemValue": "206",
+        "itemSeq": 206
+      },
+      {
+        "name": "副伤寒",
+        "itemKey": "ParatyphoidFever",
+        "itemValue": "220",
+        "itemSeq": 220
+      },
+      {
+        "name": "甲肝",
+        "itemKey": "HepatitisA",
+        "itemValue": "240",
+        "itemSeq": 240
+      },
+      {
+        "name": "乙肝",
+        "itemKey": "HepatitisB",
+        "itemValue": "241",
+        "itemSeq": 241
+      },
+      {
+        "name": "丙肝",
+        "itemKey": "HepatitisC",
+        "itemValue": "318",
+        "itemSeq": 318
+      },
+      {
+        "name": "戊肝",
+        "itemKey": "HepatitisE",
+        "itemValue": "319",
+        "itemSeq": 319
+      },
+      {
+        "name": "肝炎（未分型）",
+        "itemKey": "Hepatitis",
+        "itemValue": "320",
+        "itemSeq": 320
+      },
+      {
+        "name": "隐性梅毒",
+        "itemKey": "SyphilisRecessive",
+        "itemValue": "321",
+        "itemSeq": 321
+      },
+      {
+        "name": "水痘",
+        "itemKey": "Chickenpox",
+        "itemValue": "323",
+        "itemSeq": 323
+      },
+      {
+        "name": "森林脑炎",
+        "itemKey": "ForestEncephalitis",
+        "itemValue": "324",
+        "itemSeq": 324
+      },
+      {
+        "name": "人感染猪链球菌",
+        "itemKey": "HumanInfectionWithStreptococcusSuis",
+        "itemValue": "346",
+        "itemSeq": 346
+      },
+      {
+        "name": "生殖道沙眼衣原体感染",
+        "itemKey": "GenitalChlamydialInfections",
+        "itemValue": "347",
+        "itemSeq": 347
+      },
+      {
+        "name": "甲型H1N1流感",
+        "itemKey": "H1N1",
+        "itemValue": "348",
+        "itemSeq": 348
+      },
+      {
+        "name": "AFP",
+        "itemKey": "AFP",
+        "itemValue": "349",
+        "itemSeq": 349
+      },
+      {
+        "name": "人感染H7N9禽流感",
+        "itemKey": "H7N9",
+        "itemValue": "350",
+        "itemSeq": 350
+      },
+      {
+        "name": "肝吸虫病",
+        "itemKey": "Clonorchiasis",
+        "itemValue": "366",
+        "itemSeq": 366
+      },
+      {
+        "name": "恙虫病",
+        "itemKey": "TsutsugamushiDisease",
+        "itemValue": "367",
+        "itemSeq": 367
+      },
+      {
+        "name": "人粒细胞无形体病",
+        "itemKey": "HGA",
+        "itemValue": "368",
+        "itemSeq": 368
+      },
+      {
+        "name": "发热伴血小板减少综合征",
+        "itemKey": "SFTS",
+        "itemValue": "369",
+        "itemSeq": 369
+      },
+      {
+        "name": "人感染H7N9禽流感(其它)",
+        "itemKey": "H7N9_OTHER",
+        "itemValue": "370",
+        "itemSeq": 370
+      },
+      {
+        "name": "中东呼吸综合征（MERS）",
+        "itemKey": "MERS",
+        "itemValue": "371",
+        "itemSeq": 371
+      },
+      {
+        "name": "埃博拉出血热",
+        "itemKey": "EBHF",
+        "itemValue": "372",
+        "itemSeq": 372
+      },
+      {
+        "name": "丁肝",
+        "itemKey": "HepatitisD",
+        "itemValue": "373",
+        "itemSeq": 373
+      },
+      {
+        "name": "寨卡病毒病",
+        "itemKey": "ZhaikaVirusDisease",
+        "itemValue": "374",
+        "itemSeq": 374
+      },
+      {
+        "name": "肺结核利福平耐药",
+        "itemKey": "RfpTB",
+        "itemValue": "375",
+        "itemSeq": 375
+      },
+      {
+        "name": "肺结核病原学阳性",
+        "itemKey": "EtiologicalPositiveTB",
+        "itemValue": "376",
+        "itemSeq": 376
+      },
+      {
+        "name": "肺结核病原学阴性",
+        "itemKey": "EtiologicalNegativeTB",
+        "itemValue": "377",
+        "itemSeq": 377
+      },
+      {
+        "name": "肺结核无病原学结果",
+        "itemKey": "NoEtiologicalTB",
+        "itemValue": "378",
+        "itemSeq": 378
+      },
+      {
+        "name": "新型冠状病毒肺炎",
+        "itemKey": "NewPneumonia",
+        "itemValue": "379",
+        "itemSeq": 379
+      },
+      {
+        "name": "严重精神障碍",
+        "itemKey": "Psychogeny",
+        "itemValue": "601",
+        "itemSeq": 601
+      }
+    ]
+  }
+]

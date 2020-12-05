@@ -1,3 +1,3 @@
-import {genByYaml} from './standard';
+import {genByYamlArray} from './standard';
 
-genByYaml(require(`../../config.dubhe.json`)).then();
+genByYamlArray(require(`../../config.dubhe.json`)).then();

@@ -31,11 +31,11 @@
 
 | Category | categoryName | itemValue | itemKey | name | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
-|ATTACHMENT_CATEGORY|附件分类|0|attachment_avatar|头像|0|
-|ATTACHMENT_CATEGORY|附件分类|10|attachment_document|文档系统|10|
-|ATTACHMENT_CATEGORY|附件分类|20|attachment_attachment|附件|30|
-|ATTACHMENT_CATEGORY|附件分类|30|attachment_template|模板|30|
-|ATTACHMENT_CATEGORY|附件分类|999|attachment_other|其他|999|
+|ATTACHMENT_CATEGORY|附件分类|0|AVATAR|头像|0|
+|ATTACHMENT_CATEGORY|附件分类|10|DOCUMENT|文档系统|10|
+|ATTACHMENT_CATEGORY|附件分类|20|ATTACHMENT|附件|30|
+|ATTACHMENT_CATEGORY|附件分类|30|TEMPLATE|模板|30|
+|ATTACHMENT_CATEGORY|附件分类|999|OTHER|其他|999|
 
 
     3 | 状态 | FORM_STATUS_TYPE
