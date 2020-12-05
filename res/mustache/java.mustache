@@ -4,6 +4,10 @@ import com.kosmos.dubhe.standard.EnumType;
 import static com.kosmos.dubhe.standard.EnumTypeUtils.ENUM_SELF_INTEGER;
 import static com.kosmos.dubhe.standard.EnumTypeUtils.ENUM_SELF_STRING;
 
+/**
+* @author byGenerator
+*/
+
 public enum {{clazz}} {
     INSTANCE;
 
@@ -30,22 +34,27 @@ public enum {{clazz}} {
             private final String itemValue;
             private final Integer itemSeq;
 
+            @Override
             public String getItemName() {
                 return itemName;
             }
 
+            @Override
             public String getItemKey() {
                 return itemKey;
             }
 
+            @Override
             public String getItemValue() {
                 return itemValue;
             }
 
+            @Override
             public Integer getItemSeq() {
                 return itemSeq;
             }
 
+            @Override
             public String getString() {
                 return toString().toLowerCase();
             }
