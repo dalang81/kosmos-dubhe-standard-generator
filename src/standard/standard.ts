@@ -8,18 +8,29 @@ import {FileType, read, write} from './fileUtils';
 const _flagLast = (arr, lastKey) => [..._.initial(arr), _.defaults(_.last(arr), {[lastKey]: true})];
 
 const formatItem = (c, i) => { // category upper snake
-    const {category, items} = c;
+    const {category, extraInterface, items} = c;
     const Upper_Snake_Category = _.chain(category).snakeCase().toUpper().value();
     const UpperCamelCategory = _.chain(category).camelCase().upperFirst().value();
+    const hasExtraInterface = !!extraInterface?.length;
+    const extraInterfaceString = hasExtraInterface ? _.join(extraInterface, ' , ') : '';
     const mergeItems = _.map(_flagLast(items, 'itemLast'), item => ({
         ...item,
         ..._.omit(c, 'items'),
-        label: item.label || item.itemKey,
+        itemLabel: item.itemLabel || item.itemKey,
         category,
         Upper_Snake_Category,
         UpperCamelCategory,
     }));
-    return {...c, category, items: mergeItems, Upper_Snake_Category, UpperCamelCategory, CATEGORY_SEQ: i};
+    return {
+        ...c,
+        category,
+        hasExtraInterface,
+        extraInterfaceString,
+        items: mergeItems,
+        Upper_Snake_Category,
+        UpperCamelCategory,
+        CATEGORY_SEQ: i
+    };
 };
 const formatCategory = categoryArray => {
     const json = JSON.parse(JSON.stringify(categoryArray));
@@ -35,11 +46,12 @@ class Category {
 }
 
 class CategoryItem {
-    name: string;
+    itemLabel?: string;
+    itemName: string;
     itemKey: string;
     itemValue: string;
     itemSeq: number;
-    label ?: string;
+    remark?: string;
 }
 
 const yaml2json = async ({yamlStr = ''}) => {
@@ -50,16 +62,21 @@ const yaml2json = async ({yamlStr = ''}) => {
 
     const categoryArray = formatCategory(jsonObject);
 
-    console.table(_.map(categoryArray, ({category, categoryName}) => ({category, categoryName})));
+    console.table(_.map(categoryArray, ({category, categoryName, hasExtraInterface, extraInterfaceString}) => ({
+        category,
+        categoryName,
+        hasExtraInterface,
+        extraInterfaceString
+    })));
 
     console.table(_.chain(categoryArray)
         .map('items')
         .flatten()
         .map(({
-                  name, itemKey, itemValue, itemSeq, category, categoryName,
-                  remark, label, last, itemLast, categoryLast, UpperCamelCategory, Upper_Snake_Category
+                  itemName, itemKey, itemValue, itemSeq, category, categoryName,
+                  remark, itemLabel, last, itemLast, categoryLast, UpperCamelCategory, Upper_Snake_Category
               }) => ({
-            category, itemKey, itemValue, itemSeq, categoryName, name,
+            category, itemKey, itemValue, itemSeq, categoryName, itemName,
         }))
         .value()
     );
@@ -73,7 +90,7 @@ const json2yaml = ({jsonObj = {}}) => {
     return yaml.safeDump(jsonObj);
 };
 
-const json2java = async ({categoryArray, pkg, clazz, template = read({name: 'java', type: FileType.mustache})}) => {
+const json2java = async ({categoryArray, pkg, clazz, template = read({itemName: 'java', type: FileType.mustache})}) => {
     const output = Mustache.render(template, {enums: categoryArray, pkg, clazz});
     console.log('----------------------- mustacheJava start -----------------------\r\n');
     console.log(output);
@@ -81,7 +98,7 @@ const json2java = async ({categoryArray, pkg, clazz, template = read({name: 'jav
     return output;
 };
 
-const json2js = async ({categoryArray, clazz, template = read({name: 'js', type: FileType.mustache})}) => {
+const json2js = async ({categoryArray, clazz, template = read({itemName: 'js', type: FileType.mustache})}) => {
     const output = Mustache.render(template, {enums: categoryArray, clazz});
     console.log('----------------------- mustacheJavaScript start -----------------------\r\n');
     console.log(output);
@@ -89,7 +106,7 @@ const json2js = async ({categoryArray, clazz, template = read({name: 'js', type:
     return output;
 };
 
-const json2sql = async ({categoryArray, uuid = null, template = read({name: 'sql', type: FileType.mustache})}) => {
+const json2sql = async ({categoryArray, uuid = null, template = read({itemName: 'sql', type: FileType.mustache})}) => {
     const output = Mustache.render(template, {enums: categoryArray, uuid: _.replace(uuid, /-/g, '_')});
     console.log('----------------------- json2sql start -----------------------\r\n');
     console.log(output);
@@ -97,7 +114,7 @@ const json2sql = async ({categoryArray, uuid = null, template = read({name: 'sql
     return output;
 };
 
-const json2md = async ({categoryArray, clazz = null, template = read({name: 'md', type: FileType.mustache})}) => {
+const json2md = async ({categoryArray, clazz = null, template = read({itemName: 'md', type: FileType.mustache})}) => {
     const output = Mustache.render(template, {enums: categoryArray, clazz});
     console.log('----------------------- json2md start -----------------------\r\n');
     console.log(output);
@@ -119,7 +136,7 @@ const RunException = str => {
 //
 //                          }) => {
 //     yamlStr = yamlStr || read({
-//         name: yamlResName,
+//         itemName: yamlResName,
 //         type: FileType.yaml,
 //         input
 //     }) || RunException('yamlStr and yamlResName must be not null ');
@@ -140,7 +157,7 @@ const genJson = async ({
 
                        }) => {
     yamlStr = yamlStr || read({
-        name: yamlResName,
+        itemName: yamlResName,
         type: FileType.yaml,
         input
     }) || RunException('yamlStr and yamlResName must be not null ');
@@ -151,7 +168,14 @@ const genJson = async ({
 const genByYamlArray = async configGroup => {
     console.log(' genByYamlArray config ', configGroup);
 
-    const jsonGroup = await Promise.all(_.map(configGroup, async ({yamlStr, input, yamlResName, pkg, clazz, output,}) => {
+    const jsonGroup = await Promise.all(_.map(configGroup, async ({
+                                                                      yamlStr,
+                                                                      input,
+                                                                      yamlResName,
+                                                                      pkg,
+                                                                      clazz,
+                                                                      output,
+                                                                  }) => {
             const g = await genJson({
                 yamlStr,
                 input,
@@ -168,7 +192,7 @@ const genByYamlArray = async configGroup => {
             return result;
         }
     ));
-   // console.log(' genByYamlArray jsonGroup ', JSON.stringify(jsonGroup));
+    // console.log(' genByYamlArray jsonGroup ', JSON.stringify(jsonGroup));
 
     const duplicated = _.chain(jsonGroup)
         .map('categoryArray')
@@ -184,7 +208,13 @@ const genByYamlArray = async configGroup => {
         process.exit(-1);
     }
 
-    return await Promise.all(_.map(jsonGroup, async ({categoryArray, jsonObject, pkg, clazz, output,}) => await genByJSON({
+    return await Promise.all(_.map(jsonGroup, async ({
+                                                         categoryArray,
+                                                         jsonObject,
+                                                         pkg,
+                                                         clazz,
+                                                         output,
+                                                     }) => await genByJSON({
         categoryArray,
         jsonObject,
         pkg,
@@ -209,19 +239,19 @@ const genByJSON = async ({
     const uuid = _.replace(u.uuid(), /-/g, '_');
     const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
 
-    write({name: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject), output: jsonOutput});
+    write({itemName: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject), output: jsonOutput});
 
     const javaStr = await json2java({categoryArray, pkg, clazz});
-    write({name: clazz, type: FileType.java, uuid, data: javaStr, output: javaOutput});
+    write({itemName: clazz, type: FileType.java, uuid, data: javaStr, output: javaOutput});
 
     const sqlStr = await json2sql({categoryArray, uuid});
-    write({name: clazz, type: FileType.sql, uuid, data: sqlStr, output: sqlOutput});
+    write({itemName: clazz, type: FileType.sql, uuid, data: sqlStr, output: sqlOutput});
 
     const jsStr = await json2js({categoryArray, clazz});
-    write({name: clazz, type: FileType.javascript, uuid, data: jsStr, output: jsOutput});
+    write({itemName: clazz, type: FileType.javascript, uuid, data: jsStr, output: jsOutput});
 
     const mdStr = await json2md({categoryArray, clazz});
-    write({name: clazz, type: FileType.md, uuid, data: mdStr, output: mdOutput});
+    write({itemName: clazz, type: FileType.md, uuid, data: mdStr, output: mdOutput});
 };
 
 export {yaml2json, json2yaml, json2java, json2sql, json2js, _flagLast, formatCategory, genByYamlArray};

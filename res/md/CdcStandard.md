@@ -28,7 +28,7 @@
 
     0 | 操作类型 | ACTION_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |ACTION_TYPE|操作类型|10|CREATE|创建|10|
 |ACTION_TYPE|操作类型|20|UPDATE|编辑|20|
@@ -41,7 +41,7 @@
 
     1 | 是否 | YES_NO
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |YES_NO|是否|1|YES|是|1|
 |YES_NO|是否|0|NO|否|0|
@@ -49,7 +49,7 @@
 
     2 | 性别 | GENDER
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |GENDER|性别|1|MALE|男性|1|
 |GENDER|性别|2|FEMALE|女性|2|
@@ -57,14 +57,14 @@
 
     3 | 时区 | GMT_8
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |GMT_8|时区|10|GMT_8|GMT_8|10|
 
 
     4 | 抗-HBc IgM1:1000检测结果 | ANTI_HBC_IGM
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |ANTI_HBC_IGM|抗-HBc IgM1:1000检测结果|1|YANG|阳性|1|
 |ANTI_HBC_IGM|抗-HBc IgM1:1000检测结果|2|YIN|阴性|2|
@@ -73,7 +73,7 @@
 
     5 | 年龄单位 | AGE_UNIT_CODE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |AGE_UNIT_CODE|年龄单位|01|YEAR|岁|1|
 |AGE_UNIT_CODE|年龄单位|02|MONTH|月|2|
@@ -82,7 +82,7 @@
 
     6 | 用户角色状态 | USER_ROLE_STATUS
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |USER_ROLE_STATUS|用户角色状态|0|NORMAL|正常|0|
 |USER_ROLE_STATUS|用户角色状态|10|BAN|禁用|10|
@@ -92,7 +92,7 @@
 
     7 | 病例诊断结果分类 | DIAGNOSIS_STATE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |DIAGNOSIS_STATE|病例诊断结果分类|1|LCZDBL|临床诊断病例|1|
 |DIAGNOSIS_STATE|病例诊断结果分类|2|QZBL|确诊病例|2|
@@ -104,7 +104,7 @@
 
     8 | 教育程度 | EDUCATION_LEVEL
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |EDUCATION_LEVEL|教育程度|1|WM|文盲|1|
 |EDUCATION_LEVEL|教育程度|2|XX|小学|2|
@@ -115,7 +115,7 @@
 
     9 | 肝穿检测结果 | HBSAG_CHANGE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |HBSAG_CHANGE|肝穿检测结果|1|YES|是|1|
 |HBSAG_CHANGE|肝穿检测结果|2|NO|否|2|
@@ -124,7 +124,7 @@
 
     10 | 证件类型 | IDCARD_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |IDCARD_TYPE|证件类型|1|SFZ|身份证|1|
 |IDCARD_TYPE|证件类型|3|HZ|护照|3|
@@ -136,7 +136,7 @@
 
     11 | 实验室检测结论 | LABORATORY_CONCLUSION
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |LABORATORY_CONCLUSION|实验室检测结论|1|QRJG|确认结果阳性|1|
 |LABORATORY_CONCLUSION|实验室检测结论|2|TDCL|替代策略检测阳性|2|
@@ -145,7 +145,7 @@
 
     12 | 肝穿检测结果 | HBSAG_LIVER
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |HBSAG_LIVER|肝穿检测结果|1|JX|急性病变|1|
 |HBSAG_LIVER|肝穿检测结果|2|MX|慢性病变|2|
@@ -154,7 +154,7 @@
 
     13 | 婚姻状况 | MARITAL_STATUS
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |MARITAL_STATUS|婚姻状况|1|WH|未婚|1|
 |MARITAL_STATUS|婚姻状况|2|YH|已婚或有配偶|2|
@@ -164,7 +164,7 @@
 
     14 | 有无 | HAS_OR_NO
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |HAS_OR_NO|有无|1|HAS|有|1|
 |HAS_OR_NO|有无|2|NONE|无|2|
@@ -173,7 +173,7 @@
 
     15 | 样本来源 | FOUND_METHOD
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |FOUND_METHOD|样本来源|1|SQJC|术前检测|1|
 |FOUND_METHOD|样本来源|2|SXQJC|受血(制品)前检测|2|
@@ -199,7 +199,7 @@
 
     16 | 感染途径 | BLOOD_SPREAD
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |BLOOD_SPREAD|感染途径|1|ZSDP|注射毒品|1|
 |BLOOD_SPREAD|感染途径|2|YXCB|异性传播|2|
@@ -215,7 +215,7 @@
 
     17 | HBsAg阳性时间 | HBSAG_POSTIVE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |HBSAG_POSTIVE|HBsAg阳性时间|1|GT6MONTH|&gt;6个月|1|
 |HBSAG_POSTIVE|HBsAg阳性时间|2|LT6MONTH|6个月内由阴性转为阳性|2|
@@ -224,7 +224,7 @@
 
     18 | 性病接触史 | CONTACT_SPREAD
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |CONTACT_SPREAD|性病接触史|1|ZSDP|注射毒品史|1|
 |CONTACT_SPREAD|性病接触史|2|FHYX|非婚异性性接触史|2|
@@ -241,7 +241,7 @@
 
     19 | 病例类型 | CASE_CATEGORY
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |CASE_CATEGORY|病例类型|0|WFX|未分型|0|
 |CASE_CATEGORY|病例类型|1|JX|急性|1|
@@ -250,7 +250,7 @@
 
     20 | 所属区域 | REGION_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |REGION_TYPE|所属区域|1|BXQ|本县区|1|
 |REGION_TYPE|所属区域|2|BSQTXQ|本市其他县区|2|
@@ -262,7 +262,7 @@
 
     21 | 人群分类 | PEOPLE_CATEGORY
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |PEOPLE_CATEGORY|人群分类|1|YTET|幼托儿童|1|
 |PEOPLE_CATEGORY|人群分类|2|SJET|散居儿童|2|
@@ -288,7 +288,7 @@
 
     22 | 传染病 | DISEASES_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |DISEASES_TYPE|传染病|2|Plague|鼠疫|2|
 |DISEASES_TYPE|传染病|3|Cholera|霍乱|3|

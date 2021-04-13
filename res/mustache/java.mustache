@@ -9,72 +9,81 @@ import static com.kosmos.dubhe.standard.EnumTypeUtils.ENUM_SELF_STRING;
 */
 
 public enum {{clazz}} {
-    INSTANCE;
+INSTANCE;
 
-    {{#enums}}
-        public enum {{UpperCamelCategory}} implements EnumType<{{UpperCamelCategory}}> {
-            {{#items}}
-                {{label}}("{{name}}","{{itemKey}}","{{itemValue}}",{{itemSeq}}),  {{#remark}}//{{/remark}} {{remark}}
-            {{/items}}
-            SELF(ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_INTEGER);
+{{#enums}}
+    public enum {{UpperCamelCategory}} implements EnumType<{{UpperCamelCategory}}>{{#hasExtraInterface}},{{/hasExtraInterface}} {{extraInterfaceString}} {
+    {{#items}}
 
-            public static final String CATEGORY = "{{Upper_Snake_Category}}";
-            public static final String CATEGORY_NAME = "{{categoryName}}";
-            public static final {{UpperCamelCategory}} DEFAULT = values()[0];
+        {{#remark}}//{{/remark}} {{remark}}
+        {{itemLabel}}("{{itemName}}","{{itemKey}}","{{itemValue}}",{{itemSeq}},"{{remark}}"),
+    {{/items}}
+    SELF(ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_STRING, ENUM_SELF_INTEGER, ENUM_SELF_STRING);
 
-            {{UpperCamelCategory}}(String itemName, String itemKey, String itemValue, Integer itemSeq) {
-                this.itemName = itemName;
-                this.itemKey = itemKey;
-                this.itemValue = itemValue;
-                this.itemSeq = itemSeq;
-            }
+    public static final String CATEGORY = "{{Upper_Snake_Category}}";
+    public static final String CATEGORY_NAME = "{{categoryName}}";
+    public static final {{UpperCamelCategory}} DEFAULT = values()[0];
 
-            private final String itemName;
-            private final String itemKey;
-            private final String itemValue;
-            private final Integer itemSeq;
+    {{UpperCamelCategory}}(String itemName, String itemKey, String itemValue, Integer itemSeq, String remark) {
+    this.itemName = itemName;
+    this.itemKey = itemKey;
+    this.itemValue = itemValue;
+    this.itemSeq = itemSeq;
+    this.remark = remark;
+    }
 
-            @Override
-            public String getItemName() {
-                return itemName;
-            }
+    private final String itemName;
+    private final String itemKey;
+    private final String itemValue;
+    private final Integer itemSeq;
+    private final String remark;
 
-            @Override
-            public String getItemKey() {
-                return itemKey;
-            }
+    @Override
+    public String getItemName() {
+    return itemName;
+    }
 
-            @Override
-            public String getItemValue() {
-                return itemValue;
-            }
+    @Override
+    public String getItemKey() {
+    return itemKey;
+    }
 
-            @Override
-            public Integer getItemSeq() {
-                return itemSeq;
-            }
+    @Override
+    public String getItemValue() {
+    return itemValue;
+    }
 
-            @Override
-            public String getString() {
-                return toString().toLowerCase();
-            }
+    @Override
+    public Integer getItemSeq() {
+    return itemSeq;
+    }
 
-            @Override
-            public  {{UpperCamelCategory}}[] allValues() {
-                return values();
-            }
+    @Override
+    public String getRemark() {
+    return remark;
+    }
 
-            @Override
-            public String getCategory() {
-                return CATEGORY;
-            }
+    @Override
+    public String getString() {
+    return toString().toLowerCase();
+    }
 
-            @Override
-            public String getCategoryName() {
-                return CATEGORY_NAME;
-            }
-        }
+    @Override
+    public  {{UpperCamelCategory}}[] allValues() {
+    return values();
+    }
 
-    {{/enums}}
+    @Override
+    public String getCategory() {
+    return CATEGORY;
+    }
+
+    @Override
+    public String getCategoryName() {
+    return CATEGORY_NAME;
+    }
+    }
+
+{{/enums}}
 }
 

@@ -27,20 +27,20 @@ const getPrefix = (type: FileType) => {
     return rr[0];
 };
 
-const realPath = (name, type) => path.join(resPath(), getPrefix(type), `${name}.${getSuffix(type)}`);
+const realPath = (itemName, type) => path.join(resPath(), getPrefix(type), `${itemName}.${getSuffix(type)}`);
 
-const genPath = (output, name, type) => path.join(output, `${name}.${getSuffix(type)}`);
+const genPath = (output, itemName, type) => path.join(output, `${itemName}.${getSuffix(type)}`);
 
 const backup = fileName => fs.existsSync(fileName) && fs.renameSync(fileName, path.join(`${fileName}.${u.uuid()}.back`));
 
-const read = ({name, type, input = null}): string => {
+const read = ({itemName, type, input = null}): string => {
     console.log(' read input ', input);
-    const fileName = input ? genPath(input, name, type) : realPath(name, type);
+    const fileName = input ? genPath(input, itemName, type) : realPath(itemName, type);
     return fs.readFileSync(fileName).toString();
 };
-const write = ({name, type, uuid = null, data = '', output = null}): void => {
+const write = ({itemName, type, uuid = null, data = '', output = null}): void => {
     console.log(' write output ', output);
-    const fileName = output ? genPath(output, name, type) : realPath(name, type);
+    const fileName = output ? genPath(output, itemName, type) : realPath(itemName, type);
     !output && backup(fileName);
     const dirName = path.dirname(fileName);
     console.log(' write dirName ', dirName);

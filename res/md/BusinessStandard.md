@@ -6,7 +6,7 @@
 
     0 | 类型 | BUSINESS_DEMO_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |BUSINESS_DEMO_TYPE|类型|100|C|铅|100|
 |BUSINESS_DEMO_TYPE|类型|200|B|铁|200|

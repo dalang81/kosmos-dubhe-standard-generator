@@ -1,0 +1,14 @@
+[
+  {
+    "yamlResName": "FullStandard",
+    "input": "D:/dev/kosmos/dubhe/dubhe-screen/full/src/main/resources/standard",
+    "pkg": "com.kosmos.dubhe.standard",
+    "clazz": "FullStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-screen/full/src/main/java/com/kosmos/dubhe/standard",
+      "md": "D:/dev/kosmos/dubhe/dubhe-screen/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-screen/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-screen/gen/sql"
+    }
+  }
+]

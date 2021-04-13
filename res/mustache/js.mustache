@@ -6,11 +6,12 @@ class {{UpperCamelCategory}} {
     static CATEGORY = '{{Upper_Snake_Category}}';
     static CATEGORY_NAME = '{{categoryName}}';
 
-    constructor(itemName, itemKey, itemValue, itemSeq) {
+    constructor(itemName, itemKey, itemValue, itemSeq, remark) {
         this.itemName = itemName;
         this.itemKey = itemKey;
         this.itemValue = itemValue;
         this.itemSeq = itemSeq;
+        this.remark = remark;
     }
 
     getItemName() {
@@ -29,6 +30,10 @@ class {{UpperCamelCategory}} {
         return this.itemSeq;
     }
 
+    getRemrk() {
+        return this.remark;
+    }
+
     getCategory() {
         return {{UpperCamelCategory}}.CATEGORY;
     }
@@ -38,7 +43,7 @@ class {{UpperCamelCategory}} {
     }
 }
 {{#items}}
-{{UpperCamelCategory}}.{{label}} = new {{UpperCamelCategory}}('{{name}}', '{{itemKey}}', '{{itemValue}}', {{itemSeq}}); {{#remark}}//{{/remark}} {{remark}}
+{{UpperCamelCategory}}.{{itemLabel}} = new {{UpperCamelCategory}}('{{itemName}}', '{{itemKey}}', '{{itemValue}}', {{itemSeq}}, '{{remark}}'); {{#remark}}//{{/remark}} {{remark}}
 {{/items}}
 
 /************************** {{UpperCamelCategory}} define end ***************************/

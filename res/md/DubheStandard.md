@@ -9,7 +9,7 @@
 
     0 | 客户类型 | CUSTOMER_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |CUSTOMER_TYPE|客户类型|100|C|铅顾客|100|
 |CUSTOMER_TYPE|客户类型|200|B|铁顾客|200|
@@ -19,7 +19,7 @@
 
     1 | 状态 | ABANDON
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |ABANDON|状态|0|AVAILABLE|正常|0|
 |ABANDON|状态|1|REMOVE|删除|1|
@@ -29,7 +29,7 @@
 
     2 | 附件分类 | ATTACHMENT_CATEGORY
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |ATTACHMENT_CATEGORY|附件分类|0|attachment_avatar|头像|0|
 |ATTACHMENT_CATEGORY|附件分类|10|attachment_document|文档系统|10|
@@ -40,7 +40,7 @@
 
     3 | 状态 | FORM_STATUS_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |FORM_STATUS_TYPE|状态|0|CREATED|待提交|0|
 |FORM_STATUS_TYPE|状态|10|APPROVALING|审批中|10|

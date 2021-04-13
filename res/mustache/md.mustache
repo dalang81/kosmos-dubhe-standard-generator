@@ -4,15 +4,16 @@
     |{{CATEGORY_SEQ}}| {{categoryName}} | {{Upper_Snake_Category}} |
 {{/enums}}
 
+--------------------------------------------------------------------
 
 {{#enums}}
 
-    {{CATEGORY_SEQ}} | {{categoryName}} | {{Upper_Snake_Category}}
+    {{CATEGORY_SEQ}} | {{Upper_Snake_Category}} | {{categoryName}}
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
-|----------------------|--------------|-----------|---------|------|---------|
+| Category | categoryName | itemLabel |  itemKey | itemName | itemValue | itemSeq | remark |
+|------|----------|-------------|------|----------|---------------|---|---|
     {{#items}}
-|{{Upper_Snake_Category}}|{{categoryName}}|{{itemValue}}|{{itemKey}}|{{name}}|{{itemSeq}}|
+|{{Upper_Snake_Category}}|{{categoryName}}| {{itemLabel}}|{{itemKey}}|{{itemName}}|{{itemValue}}|{{itemSeq}}|{{remark}}|
     {{/items}}
 
 {{/enums}}

@@ -7,25 +7,25 @@ const yamlStr = `
 - category: YES_NO
   categoryName: 是否标识
   items:
-    - label: 'YES'
-      name: 是
+    - itemLabel: 'YES'
+      itemName: 是
       itemKey: 'YES'
       itemValue: '1'
       itemSeq: 1
-    - label: 'NO'
-      name: 否
+    - itemLabel: 'NO'
+      itemName: 否
       itemKey: 'NO'
       itemValue: '0'
       itemSeq: 0
 - category: GENDER
   categoryName: 性别
   items:
-    - name: 男
+    - itemName: 男
       itemKey: 'MALE'
       itemValue: '1'
       itemSeq: 1
-    - label: 'FEMALE'
-      name: 女
+    - itemLabel: 'FEMALE'
+      itemName: 女
       itemKey: 'FEMALE'
       itemValue: '2'
       itemSeq: 2
@@ -33,23 +33,23 @@ const yamlStr = `
 - category: ACTION_TYPE
   categoryName: 操作类型
   items:
-    - name: 创建
+    - itemName: 创建
       itemKey: 'CREATE'
       itemValue: '10'
       itemSeq: 1
-    - name: 编辑
+    - itemName: 编辑
       itemKey: 'UPDATE'
       itemValue: '20'
       itemSeq: 2
-    - name: 删除
+    - itemName: 删除
       itemKey: 'REMOVE'
       itemValue: '30'
       itemSeq: 3
-    - name: 查询
+    - itemName: 查询
       itemKey: 'QUERY'
       itemValue: '40'
       itemSeq: 4
-    - name: 上报
+    - itemName: 上报
       itemKey: 'REPORT'
       itemValue: '50'
       itemSeq: 5
@@ -62,13 +62,13 @@ const jsonStr = `
     "categoryName": "是否标识",
     "items": [
       {
-        "name": "是",
+        "itemName": "是",
         "itemKey": "YES",
         "itemValue": "1",
         "itemSeq": 1
       },
       {
-        "name": "否",
+        "itemName": "否",
         "itemKey": "NO",
         "itemValue": "0",
         "itemSeq": 0

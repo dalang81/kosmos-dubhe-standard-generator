@@ -1,0 +1,26 @@
+[
+  {
+    "yamlResName": "WebSocketStandard",
+    "input": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/resources",
+    "pkg": "com.kosmos.dubhe.websocket.action",
+    "clazz": "WebSocketStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/java/com/kosmos/dubhe/websocket/action",
+      "md": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/sql"
+    }
+  },
+  {
+    "yamlResName": "CdcReportStandard",
+    "input": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/resources",
+    "pkg": "com.kosmos.dubhe.websocket.action",
+    "clazz": "CdcReportStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/java/com/kosmos/dubhe/websocket/action",
+      "md": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/sql"
+    }
+  }
+]

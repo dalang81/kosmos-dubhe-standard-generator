@@ -6,7 +6,7 @@
 
     0 | 类型 | OA_DEMO_TYPE
 
-| Category | categoryName | itemValue | itemKey | name | itemSeq |
+| Category | categoryName | itemValue | itemKey | itemName | itemSeq |
 |----------------------|--------------|-----------|---------|------|---------|
 |OA_DEMO_TYPE|类型|100|C|铅|100|
 |OA_DEMO_TYPE|类型|200|B|铁|200|
