@@ -1,0 +1,14 @@
+[
+  {
+    "yamlResName": "WebSocketStandard",
+    "input": "D:/dev/lilian/hais/cdc/cdc-seleinum-java/src/main/resources",
+    "pkg": "com.ll.cdc.http",
+    "clazz": "WebSocketStandard",
+    "output": {
+      "java": "D:/dev/lilian/hais/cdc/cdc-seleinum-java/src/main/java",
+      "md": "D:/dev/lilian/hais/cdc/cdc-seleinum-java/gen/md",
+      "js": "D:/dev/lilian/hais/cdc/cdc-seleinum-java/gen/js",
+      "sql": "D:/dev/lilian/hais/cdc/cdc-seleinum-java/gen/sql"
+    }
+  }
+]

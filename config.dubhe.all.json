@@ -1,0 +1,38 @@
+[
+  {
+    "yamlResName": "System",
+    "input": "D:/dev/kosmos/dubhe/dubhe-core/spring-configuration/src/main/resources/standard",
+    "pkg": "com.kosmos.dubhe.standard",
+    "clazz": "SystemStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-core/spring-configuration/src/main/java/",
+      "md": "D:/dev/kosmos/dubhe/dubhe-core/spring-configuration/target/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-core/spring-configuration/target/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-core/spring-configuration/target/gen/sql"
+    }
+  },
+  {
+    "yamlResName": "WebSocketStandard",
+    "input": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/resources",
+    "pkg": "com.kosmos.dubhe.websocket.action",
+    "clazz": "WebSocketStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/java",
+      "md": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/sql"
+    }
+  },
+  {
+    "yamlResName": "CdcReportStandard",
+    "input": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/resources",
+    "pkg": "com.kosmos.dubhe.websocket.action",
+    "clazz": "CdcReportStandard",
+    "output": {
+      "java": "D:/dev/kosmos/dubhe/dubhe-core/websocket/src/main/java",
+      "md": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/md",
+      "js": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/js",
+      "sql": "D:/dev/kosmos/dubhe/dubhe-core/websocket/target/gen/sql"
+    }
+  }
+]

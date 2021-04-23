@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import * as u from 'lodash-uuid';
 import {FileType, read, write} from './fileUtils';
 
+const log = require('ololog').configure({locate: false});
 
 const _flagLast = (arr, lastKey) => [..._.initial(arr), _.defaults(_.last(arr), {[lastKey]: true})];
 
@@ -90,35 +91,57 @@ const json2yaml = ({jsonObj = {}}) => {
     return yaml.safeDump(jsonObj);
 };
 
-const json2java = async ({categoryArray, pkg, clazz, template = read({itemName: 'java', type: FileType.mustache})}) => {
+const optionLogger = ({message = '', logger = false, output = ''}) => {
+    if (!logger) {
+        return;
+    }
+    log.darkGray(`----------------------- ${message} start -----------------------\r\n`);
+    log.darkGray(output);
+    log.darkGray(`\r\n ----------------------- ${message} end -----------------------`);
+};
+
+const json2java = async ({
+                             categoryArray,
+                             pkg,
+                             clazz,
+                             template = read({itemName: 'java', type: FileType.mustache}),
+                             logger = false
+                         }) => {
     const output = Mustache.render(template, {enums: categoryArray, pkg, clazz});
-    console.log('----------------------- mustacheJava start -----------------------\r\n');
-    console.log(output);
-    console.log('\r\n ----------------------- mustacheJava end -----------------------');
+    optionLogger({message: 'mustacheJava', logger, output});
     return output;
 };
 
-const json2js = async ({categoryArray, clazz, template = read({itemName: 'js', type: FileType.mustache})}) => {
+const json2js = async ({
+                           categoryArray,
+                           clazz,
+                           template = read({itemName: 'js', type: FileType.mustache}),
+                           logger = false
+                       }) => {
     const output = Mustache.render(template, {enums: categoryArray, clazz});
-    console.log('----------------------- mustacheJavaScript start -----------------------\r\n');
-    console.log(output);
-    console.log('\r\n ----------------------- mustacheJavaScript end -----------------------');
+    optionLogger({message: 'mustacheJavaScript', logger, output});
     return output;
 };
 
-const json2sql = async ({categoryArray, uuid = null, template = read({itemName: 'sql', type: FileType.mustache})}) => {
+const json2sql = async ({
+                            categoryArray,
+                            uuid = null,
+                            template = read({itemName: 'sql', type: FileType.mustache}),
+                            logger = false
+                        }) => {
     const output = Mustache.render(template, {enums: categoryArray, uuid: _.replace(uuid, /-/g, '_')});
-    console.log('----------------------- json2sql start -----------------------\r\n');
-    console.log(output);
-    console.log('\r\n ----------------------- json2sql end -----------------------');
+    optionLogger({message: 'json2sql', logger, output});
     return output;
 };
 
-const json2md = async ({categoryArray, clazz = null, template = read({itemName: 'md', type: FileType.mustache})}) => {
+const json2md = async ({
+                           categoryArray,
+                           clazz = null,
+                           template = read({itemName: 'md', type: FileType.mustache}),
+                           logger = false
+                       }) => {
     const output = Mustache.render(template, {enums: categoryArray, clazz});
-    console.log('----------------------- json2md start -----------------------\r\n');
-    console.log(output);
-    console.log('\r\n ----------------------- json2md end -----------------------');
+    optionLogger({message: 'json2md', logger, output});
     return output;
 };
 
@@ -165,8 +188,8 @@ const genJson = async ({
     return {categoryArray, jsonObject};
 };
 
-const genByYamlArray = async configGroup => {
-    console.log(' genByYamlArray config ', configGroup);
+const genByYamlArray = async (configGroup, logger = {java: true, sql: true, json: true, js: true, md: true}) => {
+    console.log(' genByYamlArray config ', configGroup, 'logger', logger);
 
     const jsonGroup = await Promise.all(_.map(configGroup, async ({
                                                                       yamlStr,
@@ -220,6 +243,7 @@ const genByYamlArray = async configGroup => {
         pkg,
         clazz,
         output,
+        logger
     })));
 };
 
@@ -229,6 +253,7 @@ const genByJSON = async ({
                              pkg,
                              clazz,
                              output = {java: null, sql: null, json: null, js: null, md: null},
+                             logger
                          }) => {
     console.log(' genByJSON  categoryArray,                             jsonObject,                             pkg,                             clazz,                             output '
         , categoryArray,
@@ -237,20 +262,32 @@ const genByJSON = async ({
         clazz,
         output);
     const uuid = _.replace(u.uuid(), /-/g, '_');
+    const pkgPath = _.chain(pkg).split('.').join('/').value();
+
     const {java: javaOutput, sql: sqlOutput, json: jsonOutput, js: jsOutput, md: mdOutput} = output;
 
-    write({itemName: clazz, type: FileType.json, uuid, data: JSON.stringify(jsonObject), output: jsonOutput});
+    const padding = _.endsWith('/') ? '' : '/';
+    const javaPaddingOutput = _.endsWith(javaOutput, pkgPath) ? javaOutput : `${javaOutput}${padding}${pkgPath}`;
 
-    const javaStr = await json2java({categoryArray, pkg, clazz});
-    write({itemName: clazz, type: FileType.java, uuid, data: javaStr, output: javaOutput});
+    write({
+        itemName: clazz,
+        type: FileType.json,
+        uuid,
+        data: JSON.stringify(jsonObject),
+        output: javaPaddingOutput
+    });
+    log.red(' genByJSON javaPaddingOutput ', javaPaddingOutput);
 
-    const sqlStr = await json2sql({categoryArray, uuid});
+    const javaStr = await json2java({categoryArray, pkg, clazz, logger: logger.java});
+    write({itemName: clazz, type: FileType.java, uuid, data: javaStr, output: javaPaddingOutput});
+
+    const sqlStr = await json2sql({categoryArray, uuid, logger: logger.sql});
     write({itemName: clazz, type: FileType.sql, uuid, data: sqlStr, output: sqlOutput});
 
-    const jsStr = await json2js({categoryArray, clazz});
+    const jsStr = await json2js({categoryArray, clazz, logger: logger.js});
     write({itemName: clazz, type: FileType.javascript, uuid, data: jsStr, output: jsOutput});
 
-    const mdStr = await json2md({categoryArray, clazz});
+    const mdStr = await json2md({categoryArray, clazz, logger: logger.md});
     write({itemName: clazz, type: FileType.md, uuid, data: mdStr, output: mdOutput});
 };
 
