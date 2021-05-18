@@ -7,7 +7,7 @@
     "output": {
       "java": "D:/dev/kosmos/dubhe/dubhe-screen/full/src/main/java",
       "md": "D:/dev/kosmos/dubhe/dubhe-screen/full/target/gen/md",
-      "js": "D:/dev/kosmos/dubhe/dubhe-screen/full/target/gen/js",
+      "js": "D:/dev/lilian/screen/screen-client/src/standard",
       "sql": "D:/dev/kosmos/dubhe/dubhe-screen/full/target/gen/sql"
     }
   }
